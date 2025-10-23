@@ -1,0 +1,11 @@
+# 1. Image de base (BASE IMAGE)
+FROM openjdk:17-jdk-slim
+
+# 2. Copie du fichier JAR
+COPY target/*.jar app-devops.jar
+
+# 3. Exposition du port
+EXPOSE 80
+
+# 4. Commande de demarrage (ENTRYPOINT/CMD)
+CMD ["java", "-jar", "app-devops.jar", "--server.port=80"]
